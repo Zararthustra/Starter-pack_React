@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  font-family: var(--font-text);
+  font-size: 16px;
+  // Debug
+  // outline: 1px solid blue !important;
+}
+
+body {
+  background-color: var(--color-slate-100);
+  color: var(--color-slate-800);
+  font-size: var(--font-base);
+  margin: 0;
+}
+
+a {
+  color: var(--color-blue-500);
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+  margin: 0;
+  padding: 0;
+}
+
+// Widths
+.w-10 {
+  width: 10%;
+}
+.w-20 {
+  width: 20%;
+}
+.w-30 {
+  width: 30%;
+}
+.w-40 {
+  width: 40%;
+}
+.w-50 {
+  width: 50%;
+}
+.w-60 {
+  width: 60%;
+}
+.w-70 {
+  width: 70%;
+}
+.w-80 {
+  width: 80%;
+}
+.w-90 {
+  width: 90%;
+}
+.w-100 {
+  width: 100%;
+}
+
+// ScrollBar
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: white;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--light-color);
+}
+
+::selection {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}

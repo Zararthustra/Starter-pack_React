@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap');
+
+// CSS vars
+:root {
+  // Font Family
+  --font-text: 'Roboto', sans-serif;
+  --font-title: 'Anton', sans-serif;
+
+  // Slate
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+
+  // Blue
+  --color-blue-50: #cee2ff;
+  --color-blue-100: #b9d6ff;
+  --color-blue-200: #90beff;
+  --color-blue-300: #68a7ff;
+  --color-blue-400: #3f8fff;
+  --color-blue-500: #1677ff;
+  --color-blue-600: #005cdd;
+  --color-blue-700: #0045a5;
+  --color-blue-800: #002d6d;
+  --color-blue-900: #001635;
+
+  // Red
+  --color-red-50: #fef2f2;
+  --color-red-100: #fee2e2;
+  --color-red-200: #fecaca;
+  --color-red-300: #fca5a5;
+  --color-red-400: #f87171;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-red-700: #b91c1c;
+  --color-red-800: #991b1b;
+  --color-red-900: #7f1d1d;
+
+  // Green
+  --color-green-50: #dcfef0;
+  --color-green-100: #b4fddf;
+  --color-green-200: #6efcc1;
+  --color-green-300: #24faa1;
+  --color-green-400: #05cc79;
+  --color-green-500: #03834e;
+  --color-green-600: #02693e;
+  --color-green-700: #02502f;
+  --color-green-800: #013721;
+  --color-green-900: #01190f;
+
+  // primary
+  --color-primary-50: #000;
+  --color-primary-100: #000;
+  --color-primary-200: #000;
+  --color-primary-300: #000;
+  --color-primary-400: #000;
+  --color-primary-500: #fdb74e;
+  --color-primary-600: #ff9e2f;
+  --color-primary-700: #e77d00;
+  --color-primary-800: #000;
+  --color-primary-900: #000;
+
+  // Neutral
+  --color-white: #fff;
+  --color-black: #000;
+
+  // Box Shadow
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 10%);
+
+  // Spacing
+  --spacing-0: 0rem;
+  --spacing-1: 0.5rem;
+  --spacing-2: 1rem;
+  --spacing-3: 1.5rem;
+  --spacing-4: 2rem;
+  --spacing-5: 3rem;
+
+  // Border Radius
+  --rounded-sm: 3px;
+  --rounded-md: 5px;
+  --rounded-lg: 15px;
+  --rounded-full: 9999px;
+
+  // Transitions
+  --transition-all-1: all 0.3s;
+  --transition-all-2: all 0.5s;
+  --transition-all-3: all 0.7s;
+  --transition-all-4: all 0.7s;
+}
+
+// SASS vars
+$rems: (
+  0: 0,
+  1: 1rem,
+  2: 2rem,
+  3: 3rem,
+  4: 4rem,
+  5: 5rem
+) !default;
+$sides: (
+  t: top,
+  r: right,
+  b: bottom,
+  l: left,
+  y: top-bottom,
+  x: left-right
+) !default;
+
+// Gaps
+@each $key, $rem in $rems {
+  .gap-#{$key} {
+    gap: #{$rem} !important;
+  }
+}
+
+// Margins & Paddings
+@each $key, $rem in $rems {
+  // Margin
+  .m-#{$key} {
+    margin: #{$rem} !important;
+  }
+  // Margin $sides
+  @each $keySide, $side in $sides {
+    .m#{$keySide}-#{$key} {
+      @if $keySide == y {
+        margin-bottom: #{$rem} !important;
+        margin-top: #{$rem} !important;
+      } @else if$keySide == x {
+        margin-left: #{$rem} !important;
+        margin-right: #{$rem} !important;
+      } @else {
+        margin-#{$side}: #{$rem} !important;
+      }
+    }
+  }
+
+  // Padding
+  .p-#{$key} {
+    padding: #{$rem};
+  }
+  // Padding $sides
+  @each $keySide, $side in $sides {
+    .p#{$keySide}-#{$key} {
+      @if $keySide == y {
+        padding-bottom: #{$rem};
+        padding-top: #{$rem};
+      } @else if $keySide == x {
+        padding-left: #{$rem};
+        padding-right: #{$rem};
+      } @else {
+        padding-#{$side}: #{$rem};
+      }
+    }
+  }
+}
