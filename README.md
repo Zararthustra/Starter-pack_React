@@ -8,18 +8,24 @@
 > This is made with the aim of creating a new application faster, allowing to focus directly on the core of the new project and not waste unnecessary time setting up tedious code.
 
 
-## Technologies
+## Technologies & libraries used
 
-|||Version|
+|Usage|Name|Version|
 |-|-|-|
 |Framework|React.js|18.2.0
 |Builder|Vite.js|4.2.1
 |Language|Typescript|4.9.3
-|Style|Sass + custom Tailwind|1.60.0
+|Style|Sass|1.60.0
 |Cache management|ReactQuery|4.28.0
 |Formatter|Prettier|2.8.4
-|Package manager|npm|8.19.2
-|Libraries|Ant Design<br/>Axios|5.3.3<br/>1.3.4
+|Package manager|Npm|8.19.2
+|UI library|Ant Design|5.3.3
+|HTTP requests|Axios|1.3.4
+|Forms|Formik|2.2.9
+|Form validation|Yup|1.0.2
+|Date management|Dayjs|1.11.7
+|Responsive rendering|React Responsive|9.0.2
+|Changelog|Standard Version|9.5.0
 
 ## Architecture
 
@@ -56,20 +62,34 @@
 - prettier.config.cjs
 - tsconfig.json
 - tsconfig.node.json
+- vite-env.d.ts
 - vite.config.ts
 
 ## Installation
 
-1. Clone the repo with
-`git clone https://github.com/Zararthustra/Starter-pack_React`
+1. Clone the repo
+```bash
+git clone https://github.com/Zararthustra/Starter-pack_React
+```
 
-2. Duplicate the repo and change the name to `whateverYouLike`
+2. Change the project name (referenced as `MY_PROJECT`)
 
-3. Install your project locally with
-`npm install`
+3. Install locally
+```bash
+npm install
+```
 
-4. Run it with
-`npm run dev`
+4. Run dev server
+```bash
+npm run dev
+```
 
-5. Build it with
-`npm run build`
+5. Build static files
+```bash
+npm run build
+```
+
+1. Release version (click [here](https://github.com/conventional-changelog/standard-version) for more details about Standard Version)
+```bash
+npm run release
+```
