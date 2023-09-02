@@ -89,7 +89,11 @@ npm run dev
 npm run build
 ```
 
-1. Release version (click [here](https://github.com/conventional-changelog/standard-version) for more details about Standard Version)
+6. Release version (click [here](https://github.com/conventional-changelog/standard-version) for more details about Standard Version)
 ```bash
 npm run release
+```
+
+```bash
+npm run release -- --release-as X.Y.Z
 ```

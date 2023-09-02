@@ -97,3 +97,50 @@ h6 {
   background-color: var(--color-black);
   color: var(--color-white);
 }
+
+// Tags
+
+.tag {
+  border-radius: var(--rounded-full);
+  line-height: 15px;
+  margin: 0;
+  white-space: nowrap;
+  width: fit-content;
+
+  &--primary {
+    font-weight: 600;
+    padding: 0.15rem 1rem 0.2rem;
+    border: 1px solid var(--color-primary-700);
+    background-color: var(--color-primary-700);
+    color: var(--color-white);
+    font-size: var(--font-m);
+  }
+  &--green {
+    border: 1px solid var(--color-green-400);
+    background-color: var(--color-green-200);
+    color: var(--color-green-500);
+    font-size: var(--font-xs);
+    padding: 0rem 0.7rem;
+  }
+  &--red {
+    border: 1px solid var(--color-red-400);
+    background-color: var(--color-red-50);
+    color: var(--color-red-700);
+    font-size: var(--font-xs);
+    padding: 0rem 0.7rem;
+  }
+  &--warning {
+    border: 1px solid var(--color-orange-500);
+    background-color: var(--color-orange-50);
+    color: var(--color-orange-700);
+    font-size: var(--font-xs);
+    padding: 0rem 0.7rem;
+  }
+  &--info {
+    border: 1px solid var(--color-slate-400);
+    background-color: var(--color-slate-100);
+    color: var(--color-slate-700);
+    font-size: var(--font-s);
+    padding: 0rem 0.7rem;
+  }
+}
