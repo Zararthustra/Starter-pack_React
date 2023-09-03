@@ -3,6 +3,7 @@ import { ConfigProvider, App as AntApp } from 'antd';
 import { useRegisterSW } from 'virtual:pwa-register/react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import AppWrapper from '@services/AppWrapper';
 import { Component, ModalReloadSW } from '@components/index';
 
 const App = () => {
@@ -40,7 +41,13 @@ const App = () => {
             updateServiceWorker={updateServiceWorker}
           />
           <Routes>
-            <Route element={<Component hello={'Hello'} />} path="/" />
+            <Route element={<AppWrapper />}>
+              <Route element={<Component hello={'Hello'} />} path="/" />
+              <Route
+                element={<Component hello={'Hola'} />}
+                path="/parametres"
+              />
+            </Route>
           </Routes>
         </BrowserRouter>
       </AntApp>
