@@ -53,8 +53,8 @@ const Sidebar = ({ isOpenSidebar, setIsOpenSidebar }: ISidebarProps) => {
       <div
         className={
           isOpenSidebar
-            ? 'sidebar-items sidebar-items--open flex-col pb-1'
-            : 'sidebar-items sidebar-items--close flex-col align-center pb-1'
+            ? 'sidebar-items sidebar-items--open flex-col'
+            : 'sidebar-items sidebar-items--close flex-col align-center'
         }>
         {/* Closed */}
         {!isOpenSidebar && (
@@ -93,12 +93,21 @@ const Sidebar = ({ isOpenSidebar, setIsOpenSidebar }: ISidebarProps) => {
               </div>
 
               {/* Logout */}
-              <IconOnOff
-                width={35}
-                height={35}
-                className="sidebar__icon-logout"
-                onClick={handleReset}
-              />
+              <div className="flex-col align-center">
+                <IconOnOff
+                  width={35}
+                  height={35}
+                  className="sidebar__icon-logout"
+                  onClick={handleReset}
+                />
+                <p
+                  className="mt-0 mb-05 f-xs"
+                  style={{
+                    color: 'var(--color-grey-300)'
+                  }}>
+                  {APP_VERSION}
+                </p>
+              </div>
             </div>
           </>
         )}
@@ -154,16 +163,25 @@ const Sidebar = ({ isOpenSidebar, setIsOpenSidebar }: ISidebarProps) => {
               </div>
 
               {/* Logout */}
-              <div className="sidebar__item">
-                <IconOnOff
-                  width={40}
-                  height={35}
-                  className="sidebar__icon-logout"
-                  onClick={handleReset}
-                />
-                <div className="sidebar__link" onClick={handleReset}>
-                  Déconnexion
+              <div className="flex-col">
+                <div className="sidebar__item">
+                  <IconOnOff
+                    width={40}
+                    height={35}
+                    className="sidebar__icon-logout"
+                    onClick={handleReset}
+                  />
+                  <div className="sidebar__link" onClick={handleReset}>
+                    Déconnexion
+                  </div>
                 </div>
+                <p
+                  className="f-xs self-end mr-1 mt-0 mb-05"
+                  style={{
+                    color: 'var(--color-grey-300)'
+                  }}>
+                  Version {APP_VERSION}
+                </p>
               </div>
             </div>
           </>

@@ -6,7 +6,7 @@
   --font-text: 'Roboto', sans-serif;
   --font-title: 'Anton', sans-serif;
 
-  --font-xs: 0.6rem;
+  --font-xs: 0.7rem;
   --font-s: 0.8rem;
   --font-m: 0.9rem;
   --font-l: 1.5rem;
@@ -153,11 +153,26 @@ $sides: (
   y: top-bottom,
   x: left-right
 ) !default;
+$fonts: (
+  xs: var(--font-xs),
+  s: var(--font-s),
+  m: var(--font-m),
+  l: var(--font-l),
+  xl: var(--font-xl),
+  xxl: var(--font-xxl)
+) !default;
 
 // Gaps
 @each $key, $rem in $rems {
   .gap-#{$key} {
     gap: #{$rem} !important;
+  }
+}
+
+// Font sizes
+@each $key, $font in $fonts {
+  .f-#{$key} {
+    font-size: #{$font} !important;
   }
 }
 
