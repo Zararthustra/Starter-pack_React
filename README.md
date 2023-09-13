@@ -29,67 +29,95 @@
 
 ## Architecture
 
-- public
-  - vite.svg
-- src
-  - assets
-    - img
-    - svg
-  - components
-    - component
-      - component.scss
-      - component.tsx
-    - index.tsx
-  - interfaces
-    - index.tsx
-  - pages
-    - index.tsx
-  - services
-    - index.tsx
-  - styles
-    - base.scss
-    - flexbox.scss
-    - grid.scss
-    - index.scss
-    - variables.scss
-  - utils
-    - index.tsx
-  - App.tsx
-  - main.tsx
-  - vite-env.d.ts
-- index.html
-- package.json
-- prettier.config.cjs
-- tsconfig.json
-- tsconfig.node.json
-- vite-env.d.ts
-- vite.config.ts
+```bash
+src
+|   App.tsx
+|   main.tsx
+|   vite-env.d.ts
+|
++---assets
+|   |   index.ts
+|   |
+|   +---img
+|   |       blank_profile.png
+|   |       customer1.png
+|   |       customer2.png
+|   |       ...
+|   |
+|   \---svg
+|           IconArrowRight.tsx
+|           IconBurger.tsx
+|           IconClose.tsx
+|           ...
+|
++---components
+|   |   index.tsx
+|   |
+|   +---Button
+|   |       Button.scss
+|   |       Button.tsx
+|   |
+|   +---Component
+|   |       Component.scss
+|   |       Component.tsx
+|   |
+|   +---Modals
+|   |       ModalReloadSW.tsx
+|   |
+|   \---Sidebar
+|           Sidebar.scss
+|           Sidebar.tsx
+|
++---interfaces
+|       icon.interface.ts
+|       index.ts
+|
++---queries
+|       axios.ts
+|       index.ts
+|       queryTemplate.ts
+|
++---services
+|       AppContext.tsx
+|       AppWrapper.tsx
+|       localStorageService.ts
+|
++---styles
+|       base.scss
+|       flexbox.scss
+|       grid.scss
+|       index.scss
+|       variables.scss
+|
+\---utils
+        formatters.tsx
+```
 
 ## Installation
 
 1. Clone the repo
 ```bash
-git clone https://github.com/Zararthustra/Starter-pack_React
+git clone https://github.com/Zararthustra/Starter-pack_React.git
 ```
 
-2. Change the project name (referenced as `MY_PROJECT`)
+1. Duplicate this directory with a different project name (referenced as `MY_PROJECT`)
 
-3. Install locally
+2. Install dependencies
 ```bash
 npm install
 ```
 
-4. Run dev server
+1. Run dev server
 ```bash
 npm run dev
 ```
 
-5. Build static files
+1. Build static files
 ```bash
 npm run build
 ```
 
-6. Release version (click [here](https://github.com/conventional-changelog/standard-version) for more details about Standard Version)
+1. Release version (click [here](https://github.com/conventional-changelog/standard-version) for more details about Standard Version)
 ```bash
 npm run release
 ```
