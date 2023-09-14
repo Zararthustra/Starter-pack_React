@@ -72,6 +72,13 @@ src
 |       icon.interface.ts
 |       index.ts
 |
++---pages
+|   |   index.tsx
+|   |
+|   \---Home
+|           Home.scss
+|           Home.tsx
+|
 +---queries
 |       axios.ts
 |       index.ts

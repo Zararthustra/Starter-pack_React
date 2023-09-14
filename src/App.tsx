@@ -3,8 +3,9 @@ import { ConfigProvider, App as AntApp } from 'antd';
 import { useRegisterSW } from 'virtual:pwa-register/react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import { Home } from '@pages/index';
 import AppWrapper from '@services/AppWrapper';
-import { Component, ModalReloadSW } from '@components/index';
+import { ModalReloadSW } from '@components/index';
 
 const App = () => {
   const {
@@ -42,11 +43,8 @@ const App = () => {
           />
           <Routes>
             <Route element={<AppWrapper />}>
-              <Route element={<Component hello={'Hello'} />} path="/" />
-              <Route
-                element={<Component hello={'Hola'} />}
-                path="/parametres"
-              />
+              <Route element={<Home />} path="/" />
+              <Route element={<div>Paremètres</div>} path="/parametres" />
             </Route>
           </Routes>
         </BrowserRouter>
