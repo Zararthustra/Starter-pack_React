@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/Zararthustra/Starter-pack_React/compare/v0.0.3...v0.0.4) (2023-12-03)
+
+
+### Features
+
+* **Test:** add tests with Vitest ([e71c535](https://github.com/Zararthustra/Starter-pack_React/commit/e71c535eb3bf8c45df269d5779cfe0db8a0b1df1))
+
 ### [0.0.3](https://github.com/Zararthustra/Starter-pack_React/compare/v0.0.2...v0.0.3) (2023-12-03)
 
 
