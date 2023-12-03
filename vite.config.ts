@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
@@ -42,5 +44,19 @@ export default defineConfig({
   ],
   define: {
     APP_VERSION: JSON.stringify(process.env.npm_package_version),
+  },
+  test: {
+    coverage: {
+      provider: "v8",
+      exclude: ["src/assets", "src/services", "src/components"],
+    },
+    typecheck: {
+      include: ["src/queries"],
+    },
+    environment: "jsdom",
+    globals: true,
+    setupFiles: ["src/setupTest.ts"],
+    exclude: ["./node_modules"],
+    include: ["**/*.test.ts?(x)"],
   },
 });

@@ -3,7 +3,10 @@ import { Button } from "@components/index";
 import { IconHome, notfound } from "@assets/index";
 
 export const NotFound = () => (
-  <main className="flex h-screen flex-col items-center justify-between">
+  <main
+    data-testid="notfound"
+    className="flex h-screen flex-col items-center justify-between"
+  >
     <div className="mt-[10rem] flex flex-col items-center justify-center">
       <h2 className="mb-2">Vous allez où comme ça ?</h2>
       <Link to={"/"}>
