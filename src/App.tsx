@@ -1,25 +1,25 @@
-import frFR from 'antd/locale/fr_FR';
-import { ConfigProvider, App as AntApp } from 'antd';
-import { useRegisterSW } from 'virtual:pwa-register/react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import frFR from "antd/locale/fr_FR";
+import { ConfigProvider, App as AntApp } from "antd";
+import { useRegisterSW } from "virtual:pwa-register/react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import { Home } from '@pages/index';
-import AppWrapper from '@services/AppWrapper';
-import { ModalReloadSW } from '@components/index';
+import AppWrapper from "@services/AppWrapper";
+import { Home, NotFound } from "@pages/index";
+import { ModalReloadSW } from "@components/index";
 
 const App = () => {
   const {
     offlineReady: [offlineReady, setOfflineReady],
     needRefresh: [needRefresh, setNeedRefresh],
-    updateServiceWorker
+    updateServiceWorker,
   } = useRegisterSW({
-    onRegistered(r) {
+    onRegistered(r: any) {
       // eslint-disable-next-line prefer-template
-      console.log('SW Registered');
+      console.log("SW Registered");
     },
-    onRegisterError(error) {
-      console.log('SW registration error', error);
-    }
+    onRegisterError(error: any) {
+      console.log("SW registration error", error);
+    },
   });
 
   const close = () => {
@@ -31,8 +31,9 @@ const App = () => {
     <ConfigProvider
       locale={frFR}
       theme={{
-        token: { colorPrimary: '#e77d00', borderRadius: 3 }
-      }}>
+        token: { colorPrimary: "#f0811f", borderRadius: 3 },
+      }}
+    >
       <AntApp>
         <BrowserRouter>
           <ModalReloadSW
@@ -44,8 +45,22 @@ const App = () => {
           <Routes>
             <Route element={<AppWrapper />}>
               <Route element={<Home />} path="/" />
-              <Route element={<div>Paremètres</div>} path="/parametres" />
+              <Route
+                element={<h1 className="text-center">Profil</h1>}
+                path="/profil"
+              />
+              <Route
+                element={<h1 className="text-center">Notifications</h1>}
+                path="/notifications"
+              />
+              <Route
+                element={<h1 className="text-center">Paramètres</h1>}
+                path="/parametres"
+              />
             </Route>
+
+            {/* 404 */}
+            <Route path="/*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </AntApp>

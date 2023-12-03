@@ -1,7 +1,7 @@
-import { Modal } from 'antd';
+import { Modal } from "antd";
 
-import { IconInfo } from '@assets/index';
-import { Button } from '@components/index';
+import { IconInfo } from "@assets/index";
+import { Button } from "@components/index";
 
 interface IModalReloadSWProps {
   needRefresh: boolean;
@@ -10,11 +10,11 @@ interface IModalReloadSWProps {
   updateServiceWorker: () => void;
 }
 
-const ModalReloadSW = ({
+export const ModalReloadSW = ({
   needRefresh,
   offlineReady,
   close,
-  updateServiceWorker
+  updateServiceWorker,
 }: IModalReloadSWProps) => {
   return (
     <Modal
@@ -23,24 +23,26 @@ const ModalReloadSW = ({
       width={400}
       closable={false}
       footer={
-        <div className="flex-col gap-05 w-100">
-          <Button
-            onClick={updateServiceWorker}
-            primary
-            style={{ fontWeight: 600 }}>
-            Mettre à jour
+        <div className="flex flex-col items-center gap-1">
+          <Button onClick={updateServiceWorker} className="w-full" primary>
+            <p className="w-full">Mettre à jour</p>
           </Button>
-          <Button onClick={close}>Annuler</Button>
+          <Button className="w-full" onClick={close}>
+            <p className="w-full">Annuler</p>
+          </Button>
         </div>
-      }>
-      <div className="flex-col align-center">
-        <h2>🎉 Nouvelle version 🎉</h2>
+      }
+    >
+      <div>
+        <h2 className="text-center">🎉 Nouvelle version 🎉</h2>
 
-        <p className="mt-2 mb-0">Une nouvelle version est disponible !</p>
+        <p className="my-5 text-center text-base">
+          Une nouvelle version est disponible !
+        </p>
 
-        <div className="tag--info br-full mt-2 flex gap-05 align-center justify-center">
-          <IconInfo size={40} />
-          <p className="f-s m-05">
+        <div className="bubble bubble--info">
+          <IconInfo className="shrink-0 text-blue-500" />
+          <p className="text-xs">
             La mise à jour est recommandée pour éviter tout conflit, sauf si
             vous n'avez pas de connexion internet.
           </p>
@@ -49,5 +51,3 @@ const ModalReloadSW = ({
     </Modal>
   );
 };
-
-export default ModalReloadSW;

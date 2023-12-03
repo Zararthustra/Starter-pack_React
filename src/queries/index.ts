@@ -3,5 +3,5 @@ export {
   useQueryRetrieveAll,
   useQueryRetrieveOne,
   useMutationUpdate,
-  useMutationDelete
-} from './queryTemplate';
+  useMutationDelete,
+} from "./query.template";

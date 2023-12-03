@@ -1,12 +1,12 @@
-import { IIcon } from '@interfaces/index';
+import { IIcon } from "@interfaces/index";
 
-const IconLoader = ({
+export const IconLoader = ({
   width = 32,
   height = 32,
-  className = '',
+  className = "",
   color,
   onClick,
-  style
+  style,
 }: IIcon) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -16,14 +16,16 @@ const IconLoader = ({
     className={className}
     style={style}
     fill="none"
-    viewBox={'0 0 24 24'}>
+    viewBox={"0 0 24 24"}
+  >
     <defs>
       <linearGradient
         id="mingcuteLoadingLine0"
         x1="50%"
         x2="50%"
         y1="5.271%"
-        y2="91.793%">
+        y2="91.793%"
+      >
         <stop offset="0%" stop-color="currentColor" />
         <stop offset="100%" stop-color="currentColor" stop-opacity=".55" />
       </linearGradient>
@@ -32,7 +34,8 @@ const IconLoader = ({
         x1="50%"
         x2="50%"
         y1="8.877%"
-        y2="90.415%">
+        y2="90.415%"
+      >
         <stop offset="0%" stop-color="currentColor" stop-opacity="0" />
         <stop offset="100%" stop-color="currentColor" stop-opacity=".55" />
       </linearGradient>
@@ -52,5 +55,3 @@ const IconLoader = ({
     </g>
   </svg>
 );
-
-export default IconLoader;

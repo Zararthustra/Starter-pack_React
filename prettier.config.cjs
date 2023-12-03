@@ -6,5 +6,6 @@ module.exports = {
   printWidth: 80,
   semi: true,
   bracketSpacing: true,
-  proseWrap: 'always'
+  proseWrap: 'always',
+  plugins: ['prettier-plugin-tailwindcss']
 };

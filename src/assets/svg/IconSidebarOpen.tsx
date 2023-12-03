@@ -1,10 +1,10 @@
-import { IIcon } from '@interfaces/index';
+import { IIcon } from "@interfaces/index";
 
-const IconSidebarOpen = ({
+export const IconSidebarOpen = ({
   size = 24,
-  className = '',
+  className = "",
   onClick,
-  style
+  style,
 }: IIcon) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +15,8 @@ const IconSidebarOpen = ({
     style={style}
     strokeWidth="0.1"
     fill="currentColor"
-    viewBox="0 0 24 24">
+    viewBox="0 0 24 24"
+  >
     <path
       stroke="currentColor"
       fillRule="evenodd"
@@ -28,5 +29,3 @@ const IconSidebarOpen = ({
     />
   </svg>
 );
-
-export default IconSidebarOpen;

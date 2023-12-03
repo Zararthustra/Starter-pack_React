@@ -1,8 +1,9 @@
-export { default as Component } from './Component/Component';
+export { ComponentTemplate } from "./ComponentTemplate";
 
 // Modals
-export { default as ModalReloadSW } from './Modals/ModalReloadSW';
+export { ModalReloadSW } from "./modals/ModalReloadSW";
 
 // Miscellaneous
-export { default as Button } from './Button/Button';
-export { default as Sidebar } from './Sidebar/Sidebar';
+export { Button } from "./Button";
+export { Sidebar } from "./Sidebar";
+export { DarkModeToggle } from "./DarkModeToggle";

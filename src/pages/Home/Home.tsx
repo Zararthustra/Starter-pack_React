@@ -1,7 +1,7 @@
-import './Home.scss';
-
-const Home = () => {
-  return <div className="home">Accueil</div>;
+export const Home = () => {
+  return (
+    <main>
+      <h1 className="text-center">Accueil</h1>
+    </main>
+  );
 };
-
-export default Home;

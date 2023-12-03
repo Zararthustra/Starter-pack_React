@@ -1,11 +1,11 @@
-import { IIcon } from '@interfaces/index';
+import { IIcon } from "@interfaces/index";
 
-const IconParameter = ({
+export const IconParameter = ({
   width = 24,
   height = 24,
-  className = '',
+  className = "",
   onClick,
-  style
+  style,
 }: IIcon) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +15,8 @@ const IconParameter = ({
     className={className}
     style={style}
     fill="none"
-    viewBox="0 0 24 24">
+    viewBox="0 0 24 24"
+  >
     <path
       color="currentColor"
       stroke="currentColor"
@@ -26,5 +27,3 @@ const IconParameter = ({
     />
   </svg>
 );
-
-export default IconParameter;

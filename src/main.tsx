@@ -1,18 +1,17 @@
-import React from 'react';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
-import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
-import ReactDOM from 'react-dom/client';
+import App from "./App";
 
-import App from './App';
-
-import './styles/index.scss';
+import "./styles/index.css";
 
 const queryClient = new QueryClient();
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <App />
     </QueryClientProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
