@@ -46,15 +46,25 @@ const App = () => {
             <Route element={<AppWrapper />}>
               <Route element={<Home />} path="/" />
               <Route
-                element={<h1 className="text-center">Profil</h1>}
+                element={
+                  <h1 className="text-center dark:text-slate-100">Profil</h1>
+                }
                 path="/profil"
               />
               <Route
-                element={<h1 className="text-center">Notifications</h1>}
+                element={
+                  <h1 className="text-center dark:text-slate-100">
+                    Notifications
+                  </h1>
+                }
                 path="/notifications"
               />
               <Route
-                element={<h1 className="text-center">Paramètres</h1>}
+                element={
+                  <h1 className="text-center dark:text-slate-100">
+                    Paramètres
+                  </h1>
+                }
                 path="/parametres"
               />
             </Route>

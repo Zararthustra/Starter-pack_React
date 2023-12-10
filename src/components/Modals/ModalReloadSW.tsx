@@ -27,6 +27,7 @@ export const ModalReloadSW = ({
           <Button onClick={updateServiceWorker} className="w-full" primary>
             <p className="w-full">Mettre à jour</p>
           </Button>
+
           <Button className="w-full" onClick={close}>
             <p className="w-full">Annuler</p>
           </Button>
