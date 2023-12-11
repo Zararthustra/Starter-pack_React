@@ -1,9 +1,9 @@
 import { IIcon } from "@interfaces/index";
 
-export const IconSuccess = ({ size = 24, className = "", noColor }: IIcon) => (
+export const IconSuccess = ({ size = 24, className = "" }: IIcon) => (
   <svg
     className={className}
-    fill={noColor ? "currentColor" : "var(--color-green-500)"}
+    fill="currentColor"
     height={size}
     width={size}
     viewBox="0 0 1024 1024"

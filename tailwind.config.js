@@ -23,6 +23,9 @@ export default {
       t2xl: { max: "1535px" },
     },
     extend: {
+      animation: {
+        spin: "spin 0.7s linear infinite"
+      },
       height: {
         screen: ["100vh", "100dvh"],
       },

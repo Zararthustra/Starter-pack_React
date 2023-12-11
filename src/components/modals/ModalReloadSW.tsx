@@ -28,7 +28,7 @@ export const ModalReloadSW = ({
             <p className="w-full">Mettre à jour</p>
           </Button>
 
-          <Button className="w-full" onClick={close}>
+          <Button secondary className="w-full" onClick={close}>
             <p className="w-full">Annuler</p>
           </Button>
         </div>

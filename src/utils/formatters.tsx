@@ -24,36 +24,41 @@ export const toastObject = (
   key?: string,
 ) => {
   let icon;
-  let color;
+  let borderColor;
+  let iconColor;
 
   switch (type) {
     case "success":
       icon = <IconSuccess />;
-      color = "var(--color-green-500)";
+      borderColor = "border-green-600";
+      iconColor = "text-green-600";
       break;
     case "error":
       icon = <IconError />;
-      color = "var(--color-red-500)";
+      borderColor = "border-red-500";
+      iconColor = "text-red-500";
       break;
     case "warning":
       icon = <IconWarning />;
-      color = "var(--color-orange-500)";
+      borderColor = "border-yellow-500";
+      iconColor = "text-yellow-500";
       break;
     case "info":
       icon = <IconInfo />;
-      color = "var(--color-blue-400)";
+      borderColor = "border-blue-700";
+      iconColor = "text-blue-700";
       break;
 
     case "loading":
-      icon = (
-        <IconLoader width={24} height={24} color="var(--color-primary-700)" />
-      );
-      color = "var(--color-primary-700)";
+      icon = <IconLoader width={24} height={24} />;
+      borderColor = "border-primary-500";
+      iconColor = "text-primary-500";
       break;
 
     default:
       icon = <IconError />;
-      color = "black";
+      borderColor = "border-red-500";
+      iconColor = "text-red-500";
       break;
   }
 
@@ -61,9 +66,9 @@ export const toastObject = (
     return {
       icon: icon,
       placement: "top",
-      style: { borderLeft: `4px solid ${color}` },
-      message: <h3>{title}</h3>,
-      description: <p className="f-m m-0">{description}</p>,
+      className: `${iconColor} border-l-4 border-solid ${borderColor}`,
+      message: <h3 className="text-lg/[22px]">{title}</h3>,
+      description: <p>{description}</p>,
       duration: type === "loading" ? 200 : 4,
       key: key,
     } as ArgsProps;
@@ -71,9 +76,9 @@ export const toastObject = (
   return {
     icon: icon,
     placement: "top",
-    style: { borderLeft: `4px solid ${color}` },
-    message: <h3>{title}</h3>,
-    description: <p className="f-m m-0">{description}</p>,
+    className: `${iconColor} border-l-4 border-solid ${borderColor}`,
+    message: <h3 className="text-lg/[22px]">{title}</h3>,
+    description: <p>{description}</p>,
   } as ArgsProps;
 };
 
@@ -83,36 +88,27 @@ export const messageObject = (
   key?: string,
 ) => {
   let icon;
-  let color;
 
   switch (type) {
     case "success":
-      icon = <IconSuccess />;
-      color = "var(--color-green-500)";
+      icon = <IconSuccess className="text-green-600" />;
       break;
     case "error":
-      icon = <IconError />;
-      color = "var(--color-red-500)";
+      icon = <IconError className="text-red-500" />;
       break;
     case "warning":
-      icon = <IconWarning />;
-      color = "var(--color-orange-500)";
+      icon = <IconWarning className="text-yellow-500" />;
       break;
     case "info":
-      icon = <IconInfo />;
-      color = "var(--color-blue-400)";
+      icon = <IconInfo className="text-blue-700" />;
       break;
 
     case "loading":
-      icon = (
-        <IconLoader width={24} height={24} color="var(--color-primary-700)" />
-      );
-      color = "var(--color-primary-700)";
+      icon = <IconLoader className="text-primary-500" />;
       break;
 
     default:
-      icon = <IconError />;
-      color = "black";
+      icon = <IconError className="text-red-500" />;
       break;
   }
 

@@ -31,7 +31,10 @@ const App = () => {
     <ConfigProvider
       locale={frFR}
       theme={{
-        token: { colorPrimary: "#f0811f", borderRadius: 3 },
+        token: {
+          colorPrimary: "#f0811f",
+          borderRadius: 3,
+        },
       }}
     >
       <AntApp>
@@ -47,13 +50,15 @@ const App = () => {
               <Route element={<Home />} path="/" />
               <Route
                 element={
-                  <h1 className="text-center dark:text-slate-100">Profil</h1>
+                  <h1 className="my-5 text-center dark:text-slate-100">
+                    Profil
+                  </h1>
                 }
                 path="/profil"
               />
               <Route
                 element={
-                  <h1 className="text-center dark:text-slate-100">
+                  <h1 className="my-5 text-center dark:text-slate-100">
                     Notifications
                   </h1>
                 }
@@ -61,7 +66,7 @@ const App = () => {
               />
               <Route
                 element={
-                  <h1 className="text-center dark:text-slate-100">
+                  <h1 className="my-5 text-center dark:text-slate-100">
                     Paramètres
                   </h1>
                 }

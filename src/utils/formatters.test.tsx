@@ -36,9 +36,9 @@ describe("Format Toast", () => {
     expect(successToast).toStrictEqual({
       icon: <IconSuccess />,
       placement: "top",
-      style: { borderLeft: `4px solid var(--color-green-500)` },
-      message: <h3>title</h3>,
-      description: <p className="f-m m-0">desc</p>,
+      className: `text-green-600 border-l-4 border-solid border-green-600`,
+      message: <h3 className="text-lg/[22px]">title</h3>,
+      description: <p>desc</p>,
     });
   });
 
@@ -47,9 +47,9 @@ describe("Format Toast", () => {
     expect(errorToast).toStrictEqual({
       icon: <IconError />,
       placement: "top",
-      style: { borderLeft: `4px solid var(--color-red-500)` },
-      message: <h3>title</h3>,
-      description: <p className="f-m m-0">desc</p>,
+      className: `text-red-500 border-l-4 border-solid border-red-500`,
+      message: <h3 className="text-lg/[22px]">title</h3>,
+      description: <p>desc</p>,
     });
   });
 
@@ -58,9 +58,9 @@ describe("Format Toast", () => {
     expect(warningToast).toStrictEqual({
       icon: <IconWarning />,
       placement: "top",
-      style: { borderLeft: `4px solid var(--color-orange-500)` },
-      message: <h3>title</h3>,
-      description: <p className="f-m m-0">desc</p>,
+      className: `text-yellow-500 border-l-4 border-solid border-yellow-500`,
+      message: <h3 className="text-lg/[22px]">title</h3>,
+      description: <p>desc</p>,
     });
   });
 
@@ -69,22 +69,20 @@ describe("Format Toast", () => {
     expect(infoToast).toStrictEqual({
       icon: <IconInfo />,
       placement: "top",
-      style: { borderLeft: `4px solid var(--color-blue-400)` },
-      message: <h3>title</h3>,
-      description: <p className="f-m m-0">desc</p>,
+      className: `text-blue-700 border-l-4 border-solid border-blue-700`,
+      message: <h3 className="text-lg/[22px]">title</h3>,
+      description: <p>desc</p>,
     });
   });
 
   test("Toast Loading", async () => {
     const loadingToast = toastObject("loading", "title", "desc");
     expect(loadingToast).toStrictEqual({
-      icon: (
-        <IconLoader width={24} height={24} color="var(--color-primary-700)" />
-      ),
+      icon: <IconLoader width={24} height={24} />,
       placement: "top",
-      style: { borderLeft: `4px solid var(--color-primary-700)` },
-      message: <h3>title</h3>,
-      description: <p className="f-m m-0">desc</p>,
+      className: `text-primary-500 border-l-4 border-solid border-primary-500`,
+      message: <h3 className="text-lg/[22px]">title</h3>,
+      description: <p>desc</p>,
     });
   });
 
@@ -94,9 +92,9 @@ describe("Format Toast", () => {
     expect(defaultToast).toStrictEqual({
       icon: <IconError />,
       placement: "top",
-      style: { borderLeft: `4px solid black` },
-      message: <h3>title</h3>,
-      description: <p className="f-m m-0">desc</p>,
+      className: `text-red-500 border-l-4 border-solid border-red-500`,
+      message: <h3 className="text-lg/[22px]">title</h3>,
+      description: <p>desc</p>,
     });
   });
 
@@ -105,9 +103,9 @@ describe("Format Toast", () => {
     expect(keyToast).toStrictEqual({
       icon: <IconSuccess />,
       placement: "top",
-      style: { borderLeft: `4px solid var(--color-green-500)` },
-      message: <h3>title</h3>,
-      description: <p className="f-m m-0">desc</p>,
+      className: `text-green-600 border-l-4 border-solid border-green-600`,
+      message: <h3 className="text-lg/[22px]">title</h3>,
+      description: <p>desc</p>,
       duration: 4,
       key: "key",
     });
@@ -116,13 +114,11 @@ describe("Format Toast", () => {
   test("Toast with loading Key", async () => {
     const keyToast = toastObject("loading", "title", "desc", "key");
     expect(keyToast).toStrictEqual({
-      icon: (
-        <IconLoader width={24} height={24} color="var(--color-primary-700)" />
-      ),
+      icon: <IconLoader width={24} height={24} />,
       placement: "top",
-      style: { borderLeft: `4px solid var(--color-primary-700)` },
-      message: <h3>title</h3>,
-      description: <p className="f-m m-0">desc</p>,
+      className: `text-primary-500 border-l-4 border-solid border-primary-500`,
+      message: <h3 className="text-lg/[22px]">title</h3>,
+      description: <p>desc</p>,
       duration: 200,
       key: "key",
     });
@@ -133,7 +129,7 @@ describe("Format Message", () => {
   test("Message Success", async () => {
     const successMessage = messageObject("success", "message");
     expect(successMessage).toStrictEqual({
-      icon: <IconSuccess />,
+      icon: <IconSuccess className="text-green-600" />,
       content: "message",
     });
   });
@@ -141,7 +137,7 @@ describe("Format Message", () => {
   test("Message Error", async () => {
     const errorMessage = messageObject("error", "message");
     expect(errorMessage).toStrictEqual({
-      icon: <IconError />,
+      icon: <IconError className="text-red-500" />,
       content: "message",
     });
   });
@@ -149,7 +145,7 @@ describe("Format Message", () => {
   test("Message Warning", async () => {
     const warningMessage = messageObject("warning", "message");
     expect(warningMessage).toStrictEqual({
-      icon: <IconWarning />,
+      icon: <IconWarning className="text-yellow-500" />,
       content: "message",
     });
   });
@@ -157,7 +153,7 @@ describe("Format Message", () => {
   test("Message Info", async () => {
     const infoMessage = messageObject("info", "message");
     expect(infoMessage).toStrictEqual({
-      icon: <IconInfo />,
+      icon: <IconInfo className="text-blue-700" />,
       content: "message",
     });
   });
@@ -165,9 +161,7 @@ describe("Format Message", () => {
   test("Message Loading", async () => {
     const loadingMessage = messageObject("loading", "message");
     expect(loadingMessage).toStrictEqual({
-      icon: (
-        <IconLoader width={24} height={24} color="var(--color-primary-700)" />
-      ),
+      icon: <IconLoader className="text-primary-500" />,
       content: "message",
     });
   });
@@ -176,7 +170,7 @@ describe("Format Message", () => {
     // @ts-ignore
     const defaultMessage = messageObject("bug", "message");
     expect(defaultMessage).toStrictEqual({
-      icon: <IconError />,
+      icon: <IconError className="text-red-500" />,
       content: "message",
     });
   });
@@ -184,7 +178,7 @@ describe("Format Message", () => {
   test("Message with Key", async () => {
     const successMessage = messageObject("success", "message", "key");
     expect(successMessage).toStrictEqual({
-      icon: <IconSuccess />,
+      icon: <IconSuccess className="text-green-600" />,
       content: "message",
       key: "key",
       duration: 4,
@@ -194,9 +188,7 @@ describe("Format Message", () => {
   test("Message with loading Key", async () => {
     const loadingMessage = messageObject("loading", "message", "key");
     expect(loadingMessage).toStrictEqual({
-      icon: (
-        <IconLoader width={24} height={24} color="var(--color-primary-700)" />
-      ),
+      icon: <IconLoader className="text-primary-500" />,
       content: "message",
       key: "key",
       duration: 200,

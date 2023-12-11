@@ -2,6 +2,7 @@ export { ComponentTemplate } from "./ComponentTemplate";
 
 // Modals
 export { ModalReloadSW } from "./modals/ModalReloadSW";
+export { ModalReconnect } from "./modals/ModalReconnect";
 
 // Miscellaneous
 export { Button } from "./Button";

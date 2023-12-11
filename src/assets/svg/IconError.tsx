@@ -3,7 +3,7 @@ import { IIcon } from "@interfaces/index";
 export const IconError = ({ size = 24, className = "" }: IIcon) => (
   <svg
     className={className}
-    fill="var(--color-red-500)"
+    fill="currentColor"
     height={size}
     width={size}
     viewBox="0 0 24 24"

@@ -46,9 +46,9 @@
 @layer components {
   .btn-primary {
     @apply rounded
-    bg-primary-500 
+    bg-primary-500
     px-4 
-    py-2 
+    py-2  
     font-bold
     text-white
     duration-150
@@ -67,6 +67,28 @@
     duration-150
     hover:bg-primary-500 
     hover:text-white
+    hover:ease-in;
+  }
+  .btn-variant-ok {
+    @apply rounded
+    bg-green-500
+    px-4 
+    py-2  
+    font-bold
+    text-white
+    duration-150
+    hover:bg-green-400
+    hover:ease-in;
+  }
+  .btn-variant-ko {
+    @apply rounded
+    bg-red-500
+    px-4 
+    py-2  
+    font-bold
+    text-white
+    duration-150
+    hover:bg-red-400
     hover:ease-in;
   }
 
@@ -96,13 +118,25 @@
     @apply flex items-center gap-4 rounded px-2 py-2;
   }
   .bubble--info {
-    @apply border-[1px] border-solid border-blue-200 bg-blue-50;
+    @apply border-[1px] border-solid border-blue-200 bg-blue-50 text-slate-900;
   }
+}
 
-  /* Antd */
-  .ant-message-custom-content {
-    display: flex;
-    justify-items: center;
-    gap: 0.5rem;
+@layer utilities {
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
+}
+
+/* Antd */
+.ant-message-custom-content {
+  @apply flex items-center gap-2 !important;
+}
+.ant-modal-content {
+  @apply shadow-none dark:bg-slate-900 dark:text-white !important;
 }

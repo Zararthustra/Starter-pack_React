@@ -2,20 +2,24 @@ import { IconLoader } from "@assets/index";
 
 interface IButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   primary?: boolean;
+  secondary?: boolean;
   style?: object;
   className?: string;
   disabled?: boolean;
   type?: "button" | "submit" | "reset" | undefined;
+  variant?: "ok" | "ko";
   loading?: boolean;
   onClick?: any;
 }
 
 export const Button = ({
   primary,
+  secondary,
   loading,
   style,
   disabled,
   type = "button",
+  variant,
   className = "",
   onClick,
   children,
@@ -25,12 +29,15 @@ export const Button = ({
     type={type}
     style={style}
     className={`
-    flex items-center gap-2
-      ${primary ? "btn-primary" : "btn-secondary"}
+    flex items-center justify-center gap-2
+      ${primary && "btn-primary"}
+      ${secondary && "btn-secondary"}
+      ${variant === "ok" && "btn-variant-ok"}
+      ${variant === "ko" && "btn-variant-ko"}
       ${className} 
       `}
     onClick={onClick}
   >
-    {loading ? <IconLoader color={primary ? "white" : ""} /> : children}
+    {loading ? <IconLoader /> : children}
   </button>
 );
