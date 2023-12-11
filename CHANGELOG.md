@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/Zararthustra/Starter-pack_React/compare/v0.0.4...v0.0.5) (2023-12-11)
+
+
+### Features
+
+* **Button, Notification, Modal:** adapt components, add reusability logic ([ee89a5e](https://github.com/Zararthustra/Starter-pack_React/commit/ee89a5e619349d2bb5fc72032047bbe01221f1e4))
+* **CICD:** add CI script template ([b648b91](https://github.com/Zararthustra/Starter-pack_React/commit/b648b9178d2be8853b675a2eb682755119c61404))
+
 ### [0.0.4](https://github.com/Zararthustra/Starter-pack_React/compare/v0.0.3...v0.0.4) (2023-12-03)
 
 
