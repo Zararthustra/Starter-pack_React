@@ -1,8 +1,19 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See
-[standard-version](https://github.com/conventional-changelog/standard-version)
-for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.0.6](https://github.com/Zararthustra/Starter-pack_React/compare/v0.0.5...v0.0.6) (2024-01-27)
+
+
+### Features
+
+* **Linter:** add linters (eslint + prettier + imports) ([7513bb4](https://github.com/Zararthustra/Starter-pack_React/commit/7513bb447003d2b3b638a508a64e3ae0c05d44c7))
+* **Prettier:** add 2 configs ([c4e307d](https://github.com/Zararthustra/Starter-pack_React/commit/c4e307d16f7c6dd6ae6dbe9b751dfcb610567f6b))
+
+
+### Bug Fixes
+
+* disable update SW modal => update when needed instead ([eafaf3a](https://github.com/Zararthustra/Starter-pack_React/commit/eafaf3ac4de0e060ce0965484afed07da2b6c8a7))
 
 ### [0.0.5](https://github.com/Zararthustra/Starter-pack_React/compare/v0.0.4...v0.0.5) (2023-12-11)
 
