@@ -3,16 +3,22 @@ import { App as AntApp, ConfigProvider } from 'antd';
 import frFR from 'antd/locale/fr_FR';
 import { useRegisterSW } from 'virtual:pwa-register/react';
 
-import { ModalReloadSW } from '@components/index';
+// import { ModalReloadSW } from '@components/index';
 import { Home, NotFound } from '@pages/index';
 import AppWrapper from '@services/AppWrapper';
 
 const App = () => {
   const {
-    offlineReady: [offlineReady, setOfflineReady],
-    needRefresh: [needRefresh, setNeedRefresh],
+    // offlineReady: [offlineReady, setOfflineReady],
+    // needRefresh: [needRefresh, setNeedRefresh],
     updateServiceWorker
   } = useRegisterSW({
+    onNeedRefresh() {
+      updateServiceWorker();
+    },
+    onOfflineReady() {
+      console.log('Ready to work offline');
+    },
     onRegistered() {
       // eslint-disable-next-line prefer-template
       console.log('SW Registered');
@@ -22,10 +28,10 @@ const App = () => {
     }
   });
 
-  const close = () => {
-    setOfflineReady(false);
-    setNeedRefresh(false);
-  };
+  // const close = () => {
+  //   setOfflineReady(false);
+  //   setNeedRefresh(false);
+  // };
 
   return (
     <ConfigProvider
@@ -38,12 +44,12 @@ const App = () => {
       }}>
       <AntApp>
         <BrowserRouter>
-          <ModalReloadSW
+          {/* <ModalReloadSW
             offlineReady={offlineReady}
             needRefresh={needRefresh}
             close={close}
             updateServiceWorker={updateServiceWorker}
-          />
+          /> */}
           <Routes>
             <Route element={<AppWrapper />}>
               <Route element={<Home />} path="/" />

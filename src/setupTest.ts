@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom';
 
-// Extend "expect" method with @testing-library/jest-dom methods like "toBeInTheDocument()"
 import * as matchers from '@testing-library/jest-dom/matchers';
 import { cleanup } from '@testing-library/react';
 import { setupServer } from 'msw/node';
@@ -8,6 +7,7 @@ import { afterAll, afterEach, beforeAll, expect } from 'vitest';
 
 import { handlers } from '@mocks/api';
 
+// Extend "expect" method with @testing-library/jest-dom methods like "toBeInTheDocument()"
 expect.extend(matchers);
 
 // Mock server to catch API requests
