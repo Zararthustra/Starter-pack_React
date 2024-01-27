@@ -1,9 +1,9 @@
-import { Modal } from "antd";
+import { Modal } from 'antd';
 
-import { IconInfo, IconLogin, IconOnOff } from "@assets/index";
-import { Button } from "@components/index";
-import { getLS } from "@services/localStorageService";
-import { useMutationReconnect } from "@queries/index";
+import { IconInfo, IconLogin, IconOnOff } from '@assets/index';
+import { Button } from '@components/index';
+import { useMutationReconnect } from '@queries/index';
+import { getLS } from '@services/localStorageService';
 
 interface IModalReconnectProps {
   showReconnectModal: boolean;
@@ -12,7 +12,7 @@ interface IModalReconnectProps {
 
 export const ModalReconnect = ({
   showReconnectModal,
-  logout,
+  logout
 }: IModalReconnectProps) => {
   const { mutate, isLoading } = useMutationReconnect();
 
@@ -25,11 +25,10 @@ export const ModalReconnect = ({
       footer={
         <div className="flex flex-col items-center gap-1">
           <Button
-            onClick={() => mutate(getLS("refreshToken"))}
+            onClick={() => mutate(getLS('refreshToken'))}
             variant="ok"
             className="w-full"
-            loading={isLoading}
-          >
+            loading={isLoading}>
             <IconLogin width={22} height={22} />
             <p>Se reconnecter</p>
           </Button>
@@ -38,8 +37,7 @@ export const ModalReconnect = ({
             <p>Se déconnecter</p>
           </Button>
         </div>
-      }
-    >
+      }>
       <div className="">
         <h2 className="text-center">⌛ Session expirée ⌛</h2>
 

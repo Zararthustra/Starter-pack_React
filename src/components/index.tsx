@@ -1,10 +1,10 @@
-export { ComponentTemplate } from "./ComponentTemplate";
+export { ComponentTemplate } from './ComponentTemplate';
 
 // Modals
-export { ModalReloadSW } from "./modals/ModalReloadSW";
-export { ModalReconnect } from "./modals/ModalReconnect";
+export { ModalReconnect } from './modals/ModalReconnect';
+export { ModalReloadSW } from './modals/ModalReloadSW';
 
 // Miscellaneous
-export { Button } from "./Button";
-export { Sidebar } from "./Sidebar";
-export { DarkModeToggle } from "./DarkModeToggle";
+export { Button } from './Button';
+export { DarkModeToggle } from './DarkModeToggle';
+export { Sidebar } from './Sidebar';

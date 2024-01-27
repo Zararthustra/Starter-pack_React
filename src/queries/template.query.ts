@@ -1,8 +1,9 @@
-import { App } from "antd";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { App } from 'antd';
 
-import axiosInstance from "./axios";
-import { toastObject, messageObject } from "@utils/formatters";
+import axiosInstance from './axios';
+
+import { messageObject, toastObject } from '@utils/formatters';
 
 // =====
 // Axios
@@ -10,13 +11,13 @@ import { toastObject, messageObject } from "@utils/formatters";
 
 // CREATE
 export const create = async (payload: any) => {
-  const { data } = await axiosInstance.post("/endpoint", payload);
+  const { data } = await axiosInstance.post('/endpoint', payload);
   return data;
 };
 
 // RETRIEVE
 export const retrieveAll = async (): Promise<any[]> => {
-  const { data } = await axiosInstance.get("/endpoint");
+  const { data } = await axiosInstance.get('/endpoint');
   return data;
 };
 
@@ -35,8 +36,8 @@ export const update = async ({ payload, id }: { payload: any; id: number }) => {
 export const remove = async (id: number): Promise<any> => {
   await axiosInstance.delete(`/endpoint/${id}`, {
     params: {
-      id_param: id,
-    },
+      id_param: id
+    }
   });
 };
 
@@ -52,26 +53,26 @@ export const useMutationCreate = () => {
   return useMutation(create, {
     onMutate: () => {
       message.open(
-        messageObject("loading", "Création...", "useMutationCreate"),
+        messageObject('loading', 'Création...', 'useMutationCreate')
       );
     },
-    onSuccess: (response) => {
-      queryClient.invalidateQueries(["someQuery"]);
+    onSuccess: () => {
+      queryClient.invalidateQueries(['someQuery']);
 
-      message.success(messageObject("success", "Créé", "useMutationCreate"));
+      message.success(messageObject('success', 'Créé', 'useMutationCreate'));
     },
-    onError: (error) => {
+    onError: () => {
       message.error(
-        messageObject("error", "Une erreur est survenue", "useMutationCreate"),
+        messageObject('error', 'Une erreur est survenue', 'useMutationCreate')
       );
       notification.error(
         toastObject(
-          "error",
-          "Impossible de créer la séance",
-          "Vérifiez votre connexion internet ou contactez l'administrateur",
-        ),
+          'error',
+          'Impossible de créer la séance',
+          "Vérifiez votre connexion internet ou contactez l'administrateur"
+        )
       );
-    },
+    }
   });
 };
 
@@ -79,34 +80,34 @@ export const useMutationCreate = () => {
 export const useQueryRetrieveAll = () => {
   const { notification } = App.useApp();
 
-  return useQuery(["someQuery"], () => retrieveAll, {
+  return useQuery(['someQuery'], () => retrieveAll, {
     // Stale 5min
     staleTime: 60_000 * 5,
-    onError: (error) =>
+    onError: () =>
       notification.error(
         toastObject(
-          "error",
-          "Impossible de récupérer les données",
-          "Vérifiez votre connexion internet ou contactez l'administrateur",
-        ),
-      ),
+          'error',
+          'Impossible de récupérer les données',
+          "Vérifiez votre connexion internet ou contactez l'administrateur"
+        )
+      )
   });
 };
 
 export const useQueryRetrieveOne = (id: number) => {
   const { notification } = App.useApp();
 
-  return useQuery(["someQuery", id], () => retrieveOne(id), {
+  return useQuery(['someQuery', id], () => retrieveOne(id), {
     // Stale 5min
     staleTime: 60_000 * 5,
-    onError: (error) =>
+    onError: () =>
       notification.error(
         toastObject(
-          "error",
-          "Impossible de récupérer les données",
-          "Vérifiez votre connexion internet ou contactez l'administrateur",
-        ),
-      ),
+          'error',
+          'Impossible de récupérer les données',
+          "Vérifiez votre connexion internet ou contactez l'administrateur"
+        )
+      )
   });
 };
 
@@ -119,30 +120,30 @@ export const useMutationUpdate = () => {
     onMutate: () => {
       message.open(
         messageObject(
-          "loading",
-          "Modification en cours...",
-          "useMutationUpdate",
-        ),
+          'loading',
+          'Modification en cours...',
+          'useMutationUpdate'
+        )
       );
     },
-    onSuccess: (response) => {
-      queryClient.invalidateQueries(["someQuery"]);
+    onSuccess: () => {
+      queryClient.invalidateQueries(['someQuery']);
       message.success(
-        messageObject("success", "Modification réussie", "useMutationUpdate"),
+        messageObject('success', 'Modification réussie', 'useMutationUpdate')
       );
     },
-    onError: (error) => {
+    onError: () => {
       message.error(
-        messageObject("error", "Une erreur est survenue", "useMutationUpdate"),
+        messageObject('error', 'Une erreur est survenue', 'useMutationUpdate')
       );
       notification.error(
         toastObject(
-          "error",
-          "Modification échouée",
-          "Vérifiez votre connexion internet ou contactez l'administrateur",
-        ),
+          'error',
+          'Modification échouée',
+          "Vérifiez votre connexion internet ou contactez l'administrateur"
+        )
       );
-    },
+    }
   });
 };
 
@@ -154,30 +155,26 @@ export const useMutationDelete = () => {
   return useMutation(remove, {
     onMutate: () => {
       message.open(
-        messageObject(
-          "loading",
-          "Suppression en cours...",
-          "useMutationDelete",
-        ),
+        messageObject('loading', 'Suppression en cours...', 'useMutationDelete')
       );
     },
-    onSuccess: (response) => {
-      queryClient.invalidateQueries(["someQuery"]);
+    onSuccess: () => {
+      queryClient.invalidateQueries(['someQuery']);
       message.success(
-        messageObject("success", "Suppression réussie", "useMutationDelete"),
+        messageObject('success', 'Suppression réussie', 'useMutationDelete')
       );
     },
-    onError: (error) => {
+    onError: () => {
       message.error(
-        messageObject("error", "Une erreur est survenue", "useMutationDelete"),
+        messageObject('error', 'Une erreur est survenue', 'useMutationDelete')
       );
       notification.error(
         toastObject(
-          "error",
-          "Suppression échouée",
-          "Vérifiez votre connexion internet ou contactez l'administrateur",
-        ),
+          'error',
+          'Suppression échouée',
+          "Vérifiez votre connexion internet ou contactez l'administrateur"
+        )
       );
-    },
+    }
   });
 };

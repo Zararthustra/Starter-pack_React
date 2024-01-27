@@ -1,23 +1,22 @@
 export {
   create,
+  remove,
   retrieveAll,
   retrieveOne,
   update,
-  remove,
   useMutationCreate,
-  useQueryRetrieveAll,
-  useQueryRetrieveOne,
-  useMutationUpdate,
   useMutationDelete,
-} from "./template.query";
-
+  useMutationUpdate,
+  useQueryRetrieveAll,
+  useQueryRetrieveOne
+} from './template.query';
 export {
   getUser,
   login,
   reconnect,
   register,
-  useQueryUser,
   useMutationLogin,
   useMutationReconnect,
   useMutationRegister,
-} from "./user.query";
+  useQueryUser
+} from './user.query';

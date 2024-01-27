@@ -1,7 +1,7 @@
-import { Modal } from "antd";
+import { Modal } from 'antd';
 
-import { IconInfo } from "@assets/index";
-import { Button } from "@components/index";
+import { IconInfo } from '@assets/index';
+import { Button } from '@components/index';
 
 interface IModalReloadSWProps {
   needRefresh: boolean;
@@ -14,7 +14,7 @@ export const ModalReloadSW = ({
   needRefresh,
   offlineReady,
   close,
-  updateServiceWorker,
+  updateServiceWorker
 }: IModalReloadSWProps) => {
   return (
     <Modal
@@ -32,8 +32,7 @@ export const ModalReloadSW = ({
             <p className="w-full">Annuler</p>
           </Button>
         </div>
-      }
-    >
+      }>
       <div>
         <h2 className="text-center">🎉 Nouvelle version 🎉</h2>
 

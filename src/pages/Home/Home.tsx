@@ -1,9 +1,9 @@
-import { App } from "antd";
-import { useState } from "react";
+import { useState } from 'react';
+import { App } from 'antd';
 
-import { Button } from "@components/Button";
-import { messageObject, toastObject } from "@utils/formatters";
-import { ModalReconnect } from "@components/index";
+import { Button } from '@components/Button';
+import { ModalReconnect } from '@components/index';
+import { messageObject, toastObject } from '@utils/formatters';
 
 export const Home = () => {
   const [showModal, setShowModal] = useState(false);
@@ -39,13 +39,12 @@ export const Home = () => {
               onClick={() =>
                 notification.success(
                   toastObject(
-                    "success",
-                    "Notification succès",
-                    "Ceci est un message de succès",
-                  ),
+                    'success',
+                    'Notification succès',
+                    'Ceci est un message de succès'
+                  )
                 )
-              }
-            >
+              }>
               Succès
             </Button>
             <Button
@@ -53,13 +52,12 @@ export const Home = () => {
               onClick={() =>
                 notification.error(
                   toastObject(
-                    "error",
-                    "Notification erreur",
-                    "Ceci est un message d'erreur",
-                  ),
+                    'error',
+                    'Notification erreur',
+                    "Ceci est un message d'erreur"
+                  )
                 )
-              }
-            >
+              }>
               Erreur
             </Button>
             <Button
@@ -67,13 +65,12 @@ export const Home = () => {
               onClick={() =>
                 notification.warning(
                   toastObject(
-                    "warning",
-                    "Notification danger",
-                    "Ceci est un message de danger",
-                  ),
+                    'warning',
+                    'Notification danger',
+                    'Ceci est un message de danger'
+                  )
                 )
-              }
-            >
+              }>
               Danger
             </Button>
             <Button
@@ -81,13 +78,12 @@ export const Home = () => {
               onClick={() =>
                 notification.info(
                   toastObject(
-                    "info",
-                    "Notification information",
-                    "Ceci est un message d'information",
-                  ),
+                    'info',
+                    'Notification information',
+                    "Ceci est un message d'information"
+                  )
                 )
-              }
-            >
+              }>
               Information
             </Button>
             <Button
@@ -95,13 +91,12 @@ export const Home = () => {
               onClick={() =>
                 notification.open(
                   toastObject(
-                    "loading",
-                    "Notification chargement",
-                    "Ceci est un message de chargement",
-                  ),
+                    'loading',
+                    'Notification chargement',
+                    'Ceci est un message de chargement'
+                  )
                 )
-              }
-            >
+              }>
               Chargement
             </Button>
           </div>
@@ -115,50 +110,45 @@ export const Home = () => {
               primary
               onClick={() =>
                 message.success(
-                  messageObject("success", "Ceci est un message de succès"),
+                  messageObject('success', 'Ceci est un message de succès')
                 )
-              }
-            >
+              }>
               Succès
             </Button>
             <Button
               primary
               onClick={() =>
                 message.error(
-                  messageObject("error", "Ceci est un message d'erreur"),
+                  messageObject('error', "Ceci est un message d'erreur")
                 )
-              }
-            >
+              }>
               Erreur
             </Button>
             <Button
               primary
               onClick={() =>
                 message.warning(
-                  messageObject("warning", "Ceci est un message de danger"),
+                  messageObject('warning', 'Ceci est un message de danger')
                 )
-              }
-            >
+              }>
               Danger
             </Button>
             <Button
               primary
               onClick={() =>
                 message.info(
-                  messageObject("info", "Ceci est un message d'information"),
+                  messageObject('info', "Ceci est un message d'information")
                 )
-              }
-            >
+              }>
               Information
             </Button>
             <Button
               primary
               onClick={() =>
                 message.loading(
-                  messageObject("loading", "Ceci est un message de chargement"),
+                  messageObject('loading', 'Ceci est un message de chargement')
                 )
-              }
-            >
+              }>
               Chargement
             </Button>
           </div>

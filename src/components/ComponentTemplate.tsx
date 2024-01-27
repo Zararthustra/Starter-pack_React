@@ -3,5 +3,5 @@ interface IComponentProps {
 }
 
 export const ComponentTemplate = ({ prop }: IComponentProps) => {
-  return;
+  return <div>{prop}</div>;
 };

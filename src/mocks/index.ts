@@ -1,1 +1,1 @@
-export { loginRequestMock, loginResponseMock, userMock } from "./user";
+export { loginRequestMock, loginResponseMock, userMock } from './user';

@@ -1,25 +1,25 @@
-import frFR from "antd/locale/fr_FR";
-import { ConfigProvider, App as AntApp } from "antd";
-import { useRegisterSW } from "virtual:pwa-register/react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { App as AntApp, ConfigProvider } from 'antd';
+import frFR from 'antd/locale/fr_FR';
+import { useRegisterSW } from 'virtual:pwa-register/react';
 
-import AppWrapper from "@services/AppWrapper";
-import { Home, NotFound } from "@pages/index";
-import { ModalReloadSW } from "@components/index";
+import { ModalReloadSW } from '@components/index';
+import { Home, NotFound } from '@pages/index';
+import AppWrapper from '@services/AppWrapper';
 
 const App = () => {
   const {
     offlineReady: [offlineReady, setOfflineReady],
     needRefresh: [needRefresh, setNeedRefresh],
-    updateServiceWorker,
+    updateServiceWorker
   } = useRegisterSW({
-    onRegistered(r: any) {
+    onRegistered() {
       // eslint-disable-next-line prefer-template
-      console.log("SW Registered");
+      console.log('SW Registered');
     },
     onRegisterError(error: any) {
-      console.log("SW registration error", error);
-    },
+      console.log('SW registration error', error);
+    }
   });
 
   const close = () => {
@@ -32,11 +32,10 @@ const App = () => {
       locale={frFR}
       theme={{
         token: {
-          colorPrimary: "#f0811f",
-          borderRadius: 3,
-        },
-      }}
-    >
+          colorPrimary: '#f0811f',
+          borderRadius: 3
+        }
+      }}>
       <AntApp>
         <BrowserRouter>
           <ModalReloadSW

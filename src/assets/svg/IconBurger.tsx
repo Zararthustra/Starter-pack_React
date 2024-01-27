@@ -1,6 +1,6 @@
-import { IIcon } from "@interfaces/index";
+import { IIcon } from '@interfaces/index';
 
-export const IconBurger = ({ size = 24, className = "", onClick }: IIcon) => (
+export const IconBurger = ({ size = 24, className = '', onClick }: IIcon) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={size}
@@ -8,8 +8,7 @@ export const IconBurger = ({ size = 24, className = "", onClick }: IIcon) => (
     className={className}
     onClick={onClick}
     fill="none"
-    viewBox="0 0 24 24"
-  >
+    viewBox="0 0 24 24">
     <path
       stroke="currentColor"
       strokeLinecap="round"
