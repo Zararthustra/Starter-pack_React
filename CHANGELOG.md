@@ -1,8 +1,14 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See
-[standard-version](https://github.com/conventional-changelog/standard-version)
-for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.0.7](https://github.com/Zararthustra/Starter-pack_React/compare/v0.0.6...v0.0.7) (2024-04-20)
+
+
+### Features
+
+* **dependencies, ReactQuery :** upgrade dependencies, refactor ReactQuery to match v5 ([5cabaac](https://github.com/Zararthustra/Starter-pack_React/commit/5cabaacad22bc44b61e72e1b40bdebfbcac8e9cb))
+* **README:** update readme from upgrades ([72730db](https://github.com/Zararthustra/Starter-pack_React/commit/72730dbed5c24f257e31e9f032aa770c027a690c))
 
 ### [0.0.6](https://github.com/Zararthustra/Starter-pack_React/compare/v0.0.5...v0.0.6) (2024-01-27)
 
