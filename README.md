@@ -17,17 +17,17 @@
 | -------------------- | ---------------- | ------- |
 | Framework            | React.js         | 18.2.0  |
 | Builder              | Vite.js          | 4.2.0   |
-| Language             | Typescript       | 4.9.3   |
-| Style                | Tailwind         | 3.3.5   |
-| Cache management     | ReactQuery       | 4.28.0  |
-| Formatter            | Prettier         | 3.1.0   |
-| Package manager      | Npm              | 8.19.2  |
-| UI library           | Ant Design       | 5.3.3   |
-| HTTP requests        | Axios            | 1.3.4   |
-| Forms                | Formik           | 2.2.9   |
-| Type validation      | Yup              | 1.0.2   |
-| Date management      | Dayjs            | 1.11.7  |
-| Responsive rendering | React Responsive | 9.0.2   |
+| Language             | Typescript       | 5.4.5   |
+| Style                | Tailwind         | 3.4.3   |
+| Cache management     | ReactQuery       | 5.29.2  |
+| Formatter            | Prettier         | 3.2.5   |
+| Package manager      | Npm              | 10.5.0  |
+| UI library           | Ant Design       | 5.16.2  |
+| HTTP requests        | Axios            | 1.6.8   |
+| Forms                | Formik           | 2.4.5   |
+| Type validation      | Yup              | 1.4.0   |
+| Date management      | Dayjs            | 1.11.10 |
+| Responsive rendering | React Responsive | 10.0.0  |
 | Changelog            | Standard Version | 9.5.0   |
 
 ## Architecture
@@ -110,6 +110,12 @@ npm install
 
 ```bash
 npm run dev
+```
+
+- Run linters
+
+```bash
+npm run lint
 ```
 
 - Run tests
