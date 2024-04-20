@@ -16,7 +16,7 @@
 | Usage                | Name             | Version |
 | -------------------- | ---------------- | ------- |
 | Framework            | React.js         | 18.2.0  |
-| Builder              | Vite.js          | 4.2.0   |
+| Builder              | Vite.js          | 5.2.10  |
 | Language             | Typescript       | 5.4.5   |
 | Style                | Tailwind         | 3.4.3   |
 | Cache management     | ReactQuery       | 5.29.2  |
