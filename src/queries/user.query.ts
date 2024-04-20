@@ -6,7 +6,12 @@ import { jwtDecode } from 'jwt-decode';
 
 import axiosInstance from './axios';
 
-import { ILoginRequest, ILoginResponse, IUser } from '@interfaces/index';
+import {
+  EErrorCodes,
+  ILoginRequest,
+  ILoginResponse,
+  IUser
+} from '@interfaces/index';
 import {
   setAccessToken,
   setLS,
@@ -47,25 +52,11 @@ export const register = async (payload: ILoginRequest) => {
 
 // RETRIEVE
 export const useQueryUser = (userId: number) => {
-  const { notification, message } = App.useApp();
-
-  return useQuery(['user', userId], () => getUser(userId), {
-    // Stale 5min
+  return useQuery({
+    queryKey: ['user', userId],
+    queryFn: () => getUser(userId),
     staleTime: 60_000 * 5,
-    onError: (error: AxiosError) => {
-      if (error.response?.status === 404)
-        message.error(messageObject('error', "Cet utilisateur n'existe pas."));
-      else
-        notification.error(
-          toastObject(
-            'error',
-            'Impossible de récupérer les données',
-            `Une erreur est survenue. Code : ${
-              error.response ? error.response.status : error.message
-            }`
-          )
-        );
-    }
+    meta: { errorCode: EErrorCodes.GET_USER_404 }
   });
 };
 
@@ -74,7 +65,8 @@ export const useMutationLogin = () => {
   const navigate = useNavigate();
   const { notification } = App.useApp();
 
-  return useMutation(login, {
+  return useMutation({
+    mutationFn: login,
     onSuccess: (response) => {
       setAccessToken(response.access);
       setRefreshToken(response.refresh);
@@ -128,7 +120,8 @@ export const useMutationReconnect = () => {
   const navigate = useNavigate();
   const { notification } = App.useApp();
 
-  return useMutation(reconnect, {
+  return useMutation({
+    mutationFn: reconnect,
     onSuccess: (response) => {
       setAccessToken(response.access);
       setRefreshToken(response.refresh);
@@ -171,7 +164,8 @@ export const useMutationRegister = () => {
   const navigate = useNavigate();
   const { message } = App.useApp();
 
-  return useMutation(register, {
+  return useMutation({
+    mutationFn: register,
     onMutate: () => {
       message.open(
         messageObject(

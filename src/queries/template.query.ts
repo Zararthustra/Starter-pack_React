@@ -3,6 +3,7 @@ import { App } from 'antd';
 
 import axiosInstance from './axios';
 
+import { EErrorCodes } from '@interfaces/index';
 import { messageObject, toastObject } from '@utils/formatters';
 
 // =====
@@ -50,15 +51,15 @@ export const useMutationCreate = () => {
   const queryClient = useQueryClient();
   const { message, notification } = App.useApp();
 
-  return useMutation(create, {
+  return useMutation({
+    mutationFn: create,
     onMutate: () => {
       message.open(
         messageObject('loading', 'Création...', 'useMutationCreate')
       );
     },
     onSuccess: () => {
-      queryClient.invalidateQueries(['someQuery']);
-
+      queryClient.invalidateQueries({ queryKey: ['someQuery'] });
       message.success(messageObject('success', 'Créé', 'useMutationCreate'));
     },
     onError: () => {
@@ -77,46 +78,29 @@ export const useMutationCreate = () => {
 };
 
 // RETRIEVE
-export const useQueryRetrieveAll = () => {
-  const { notification } = App.useApp();
-
-  return useQuery(['someQuery'], () => retrieveAll, {
-    // Stale 5min
+export const useQueryRetrieveAll = () =>
+  useQuery({
+    queryKey: ['someQuery'],
+    queryFn: () => retrieveAll,
     staleTime: 60_000 * 5,
-    onError: () =>
-      notification.error(
-        toastObject(
-          'error',
-          'Impossible de récupérer les données',
-          "Vérifiez votre connexion internet ou contactez l'administrateur"
-        )
-      )
+    meta: { errorCode: EErrorCodes.SOME_QUERY_ERROR }
   });
-};
 
-export const useQueryRetrieveOne = (id: number) => {
-  const { notification } = App.useApp();
-
-  return useQuery(['someQuery', id], () => retrieveOne(id), {
-    // Stale 5min
+export const useQueryRetrieveOne = (id: number) =>
+  useQuery({
+    queryKey: ['someQuery', id],
+    queryFn: () => retrieveOne(id),
     staleTime: 60_000 * 5,
-    onError: () =>
-      notification.error(
-        toastObject(
-          'error',
-          'Impossible de récupérer les données',
-          "Vérifiez votre connexion internet ou contactez l'administrateur"
-        )
-      )
+    meta: { errorCode: EErrorCodes.SOME_QUERY_BY_ID_ERROR, id: id }
   });
-};
 
 // UPDATE
 export const useMutationUpdate = () => {
   const queryClient = useQueryClient();
   const { message, notification } = App.useApp();
 
-  return useMutation(update, {
+  return useMutation({
+    mutationFn: update,
     onMutate: () => {
       message.open(
         messageObject(
@@ -127,7 +111,7 @@ export const useMutationUpdate = () => {
       );
     },
     onSuccess: () => {
-      queryClient.invalidateQueries(['someQuery']);
+      queryClient.invalidateQueries({ queryKey: ['someQuery'] });
       message.success(
         messageObject('success', 'Modification réussie', 'useMutationUpdate')
       );
@@ -152,14 +136,15 @@ export const useMutationDelete = () => {
   const queryClient = useQueryClient();
   const { message, notification } = App.useApp();
 
-  return useMutation(remove, {
+  return useMutation({
+    mutationFn: remove,
     onMutate: () => {
       message.open(
         messageObject('loading', 'Suppression en cours...', 'useMutationDelete')
       );
     },
     onSuccess: () => {
-      queryClient.invalidateQueries(['someQuery']);
+      queryClient.invalidateQueries({ queryKey: ['someQuery'] });
       message.success(
         messageObject('success', 'Suppression réussie', 'useMutationDelete')
       );

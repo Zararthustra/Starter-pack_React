@@ -14,7 +14,7 @@ export const ModalReconnect = ({
   showReconnectModal,
   logout
 }: IModalReconnectProps) => {
-  const { mutate, isLoading } = useMutationReconnect();
+  const { mutate, isPending } = useMutationReconnect();
 
   return (
     <Modal
@@ -28,7 +28,7 @@ export const ModalReconnect = ({
             onClick={() => mutate(getLS('refreshToken'))}
             variant="ok"
             className="w-full"
-            loading={isLoading}>
+            loading={isPending}>
             <IconLogin width={22} height={22} />
             <p>Se reconnecter</p>
           </Button>
